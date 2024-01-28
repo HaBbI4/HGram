@@ -1,0 +1,18 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Удаление статьи{% endblock %}
+
+{% block content %}
+    <div class="main-page">
+        <div class="main-block">
+            <div class="main-conteiner">
+                <h5>Удаление статьи</h5>
+                <form method="post">
+                    {% csrf_token %}
+                    <span>{{ error }}</span>
+                    <button class="btn btn-success" type="submit">Удалить статью</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

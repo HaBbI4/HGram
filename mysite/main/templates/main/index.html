@@ -1,0 +1,24 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="main-page">
+        <div class="main-block">
+            <div class="main-conteiner">
+                <h3>Mercedes-Benz представила новую модель</h3>
+                <img src="static/main/img/CLE.jpg" alt="Cle">
+                <p>Переходи в ленту, чтобы узнать больше</p>
+                <a href="{% url 'news_home' %}"><button class="btn btn-warning">Переходи в ленту</button></a>
+            </div>
+        </div>
+        <div class="main-block">
+            <div class="main-conteiner">
+                <h3>Мы нашли 5 топовых приложений для твоего iPad!</h3>
+                <img src="static/main/img/ipadpro.jpg" alt="IpadPro">
+                <p>Переходи в ленту, чтобы узнать больше</p>
+                <a href="{% url 'news_home' %}"><button class="btn btn-warning">Переходи в ленту</button></a>
+            </div>
+        </div>  
+    </div>
+{% endblock %}

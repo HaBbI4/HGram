@@ -1,0 +1,23 @@
+{% extends "layout/basic_registr.html" %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+    <div class="registr-conteiner">
+        <div class="registr-field">
+            <form method="post">
+            
+                {% csrf_token %}
+                <p>{{form.username.label}}</p>
+                <p>{{ form.username }}</p>
+                <p>{{form.password.label}}</p>
+                <p>{{ form.password }}</p>
+                <button class="btn btn-success" type="submit">Вход</button><br>
+                
+            </form>
+            <form action="{% url 'regist' %}" method="GET">
+                <button type="submit">Регистрация</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
