@@ -16,24 +16,24 @@
                 <img src="{% static 'main/img/news.png' %}" alt="LOGO">
                 <span class="name-logo">HGram</span>
             </div>
-            <nav class="reg-menu">
-                <ul>
-                    <li><img src="{% static 'main/img/avatarka.png' %}" alt=""> 
-                        <ul>
-                            <li><a href="#">нет</a></li>
-                            <li><a href="#">да</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="registartion">
-                <ol>
-                    {% if request.user.is_authenticated %}
-                        <li> <a href="{% url 'profile' %}">{{ user.username }}</a> | <a href="{% url 'logout' %}">Выйти</a></li>
-                    {% else %}
-                        <li><a href="{% url 'regist' %}">Зарегистрироваться</a> | <a href="{% url 'login' %}">Войти</a></li>
-                    {% endif %}
-                <ol>
+            <div class="reg-menu">
+                {% if request.user.is_authenticated %}
+                    <a href="#" class="reg-link"><img src="{% static 'main/img/avatarka.png' %}" alt=""></a>
+                    <div class="reg-list-wrapper">
+                        <div class="reg-list">
+                            <a href="{% url 'profile' %}">Профиль</a>
+                            <a href="{% url 'logout' %}">Выход</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="#" class="reg-link"><img src="{% static 'main/img/avatarka.png' %}" alt=""></a>
+                    <div class="reg-list-wrapper">
+                        <div class="reg-list">
+                            <a href="{% url 'login' %}">Вход</a>
+                            <a href="{% url 'regist' %}">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
     </div>
     <div class="page">
